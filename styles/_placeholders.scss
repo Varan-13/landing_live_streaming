@@ -14,3 +14,10 @@
         fill: v.$color_dark-white;
     }
 }
+
+%hover_white {
+    &:hover {
+        cursor: pointer;
+        color: v.$color_white;
+    }
+}
