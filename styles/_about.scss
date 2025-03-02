@@ -179,7 +179,7 @@
           }
 
           @media (max-width: v.$media_sm){
-            height: 500px;
+            height: git 500px;
             &-title {
                 margin: 0;
                 @include m.font-title(35px, 400, v.$color_white);
