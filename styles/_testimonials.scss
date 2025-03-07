@@ -1,0 +1,101 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+%slider-button {
+    width: 67px;
+    height: 67px;
+    border:none;
+    border-radius: 20px;
+    background-color: rgb(83, 134, 251);
+    color:v.$color_white;
+    font-size: 44px;
+}
+
+.testimonials {
+
+    padding: 100px 0 100px 0;
+    margin: 0 auto;
+    @include m.d-flex(start,center,nowrap,column, 0, 90px);
+
+    &__title {
+        @include m.font-title(60px,400,v.$color_white);
+
+        @media (max-width: v.$media_md){
+            font-size: 35px;
+        }
+    }
+
+    .slider {
+        position: relative;
+        height: 500px;
+
+        &__left-btn {
+            @extend %slider-button;
+            @include m.position(absolute, 1, -1, top, left, 100px, -100px)
+            
+            
+        }
+        &__right-btn {
+           @extend %slider-button;
+           @include m.position(absolute, 1, -1, top, right, 100px, -100px)
+        }
+
+        &__left-btn:hover {
+            cursor: pointer;
+            scale: 1.2;
+        }
+
+        &__right-btn:hover {
+            cursor: pointer;
+            scale: 1.2;
+        }
+
+        &__points {
+            @include m.position(absolute, 1, -1, bottom, left, 0, 50%);
+            @include m.d-flex(start, center, nowrap, row, 9px, 0);
+            translate: -50% 0;
+
+            &-item {
+                background-color: v.$color_white;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+
+                &:hover {
+                    cursor: pointer;
+                    scale: 0.8;
+                    background-color: v.$color_gray;
+                }
+            }
+        }
+
+        @media (max-width: v.$media_md) {
+            height: 390px;
+
+            &__left-btn {
+                top: unset;
+                bottom:20px;
+                left: 0;
+
+            }
+            &__right-btn {
+                top: unset;
+                bottom:20px;
+                right: 0;
+            }
+
+            &__points {
+                bottom: 45px;
+            }
+        }
+
+        @media (max-width: v.$media_min) {
+            &__left-btn {
+                left: 10px;
+            }
+            &__right-btn {
+                right: 10px;
+            }
+        }
+    }
+}
