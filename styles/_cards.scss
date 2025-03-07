@@ -111,3 +111,36 @@
     width: 300px;
 }
 }
+
+
+.wave-card {
+  width: 500px;
+  height: 275px;
+  background: url('../assets/forma.png') center/contain no-repeat;
+  @include m.d-flex(start,start,nowrap,column, 0, 35px);
+
+  &__avatar {
+    width: 75px;
+    border-radius: 50%;
+    margin: 20px 0 0 30px;
+
+    @media (max-width: v.$media_md){
+      width: 35px;
+    }
+  }
+
+  &__quote {
+    @include m.font-title(20px, 400, v.$color_white);
+    margin: 0 35px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: v.$media_md){
+    width: 330px;
+    row-gap: 15px;
+    background: url('../assets/forma.png') 50% 0/contain no-repeat;
+    &__quote {
+      font-size: 13px;
+    }
+  }
+}
