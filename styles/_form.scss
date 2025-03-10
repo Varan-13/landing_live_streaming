@@ -56,7 +56,7 @@
         &__name,
         &__email,
         &__text {
-            @extend %input-template
+            @extend %input-template;
         }
 
         &__submit-btn {
